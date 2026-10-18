@@ -45,6 +45,78 @@ footer{background:#21160e;color:#eee;padding:38px 20px;margin-top:20px}.footer{m
 @media(max-width:760px){.fees-table{font-size:.88rem}.fees-table th,.fees-table td{padding:8px 6px}.fees-table .fee-name{min-width:160px}}
 
 </style>
+@media (max-width: 760px) {
+  .topbar {
+    height: auto !important;
+    min-height: 0 !important;
+    position: relative !important;
+  }
+
+  .nav {
+    height: auto !important;
+    min-height: 0 !important;
+    flex-wrap: wrap !important;
+    align-items: center;
+    padding: 8px 10px !important;
+    gap: 8px;
+  }
+
+  .brand {
+    order: 1;
+    flex: 1 1 100%;
+    font-size: 1rem;
+  }
+
+  .hamb {
+    display: none !important;
+  }
+
+  .links {
+    display: grid !important;
+    position: static !important;
+    order: 2;
+    flex: 1 0 100%;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5px;
+    margin: 0;
+    padding: 5px 0;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .links button {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    white-space: normal;
+    text-align: center;
+    padding: 8px 5px;
+    font-size: .82rem;
+    line-height: 1.45;
+    border: 1px solid #ffffff28;
+    border-radius: 9px;
+  }
+
+  .langs {
+    display: flex !important;
+    order: 3;
+    flex: 1 0 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px;
+    padding: 4px 0 8px;
+  }
+
+  .langs button {
+    font-size: .8rem;
+    padding: 6px 8px;
+  }
+} 
 </head>
 <body>
 <header class="topbar"><nav class="nav">
