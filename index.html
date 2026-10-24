@@ -44,86 +44,80 @@ footer{background:#21160e;color:#eee;padding:38px 20px;margin-top:20px}.footer{m
 .fees-table .fee-audio{margin-inline-start:8px;vertical-align:middle}
 @media(max-width:760px){.fees-table{font-size:.88rem}.fees-table th,.fees-table td{padding:8px 6px}.fees-table .fee-name{min-width:160px}}
 
+/* Mobile layout: every section remains reachable from the menu, and language switching is available there too. */
+.mobile-langs{display:none}
+@media(max-width:760px){
+  html,body{max-width:100%;overflow-x:hidden}
+  .topbar{height:auto;min-height:58px}
+  .nav{position:relative;height:58px;min-height:58px;padding:0 10px;gap:8px;flex-wrap:nowrap}
+  .brand{min-width:0;max-width:calc(100vw - 94px);overflow:hidden;text-overflow:ellipsis;font-size:.95rem}
+  .brand span:last-child{overflow:hidden;text-overflow:ellipsis}
+  .hamb{display:block;flex:0 0 auto;min-width:44px;min-height:42px;margin-inline-start:auto;margin-right:0}
+  .links{display:none;position:absolute;top:58px;right:8px;left:8px;max-height:calc(100vh - 70px);max-height:calc(100dvh - 70px);overflow-y:auto;overscroll-behavior:contain;background:#24180f;border-radius:0 0 16px 16px;flex-direction:column;align-items:stretch;justify-content:flex-start;flex-wrap:nowrap;padding:8px;gap:0;box-shadow:0 14px 40px #0004;z-index:100}
+  .links.open{display:flex}
+  .links>button{display:block;width:100%;min-height:44px;text-align:start;white-space:normal;padding:10px 12px;border:0;border-bottom:1px solid #ffffff16;font-size:.95rem;line-height:1.45}
+  .mobile-langs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;padding:12px 2px 4px;margin-top:8px;border-top:1px solid #ffffff25;direction:ltr}
+  .links .mobile-langs button{min-width:0;min-height:40px;padding:7px 3px;border:1px solid #e6d9c5;border-radius:10px;background:#fffdf8;color:#24180f;text-align:center;font-size:.82rem;white-space:normal;line-height:1.25}
+  .links .mobile-langs button.active{background:var(--gold);border-color:var(--gold);color:#fff}
+  .langs{display:none}
+  .container{width:100%;max-width:100%;padding:32px 14px}
+  .hero{min-height:calc(100svh - 58px);min-height:max(500px,calc(100svh - 58px))}
+  .hero-inner{padding:45px 16px}
+  h1{font-size:clamp(2.2rem,10vw,3.5rem);overflow-wrap:anywhere}
+  h2{font-size:clamp(1.55rem,7vw,2.2rem);overflow-wrap:anywhere}
+  p,li,td,figcaption{overflow-wrap:anywhere}
+  .cards,.featuregrid,.split,.rooms,.gallery,.video-grid,.site-photo-grid{grid-template-columns:minmax(0,1fr)}
+  .cards{gap:14px}
+  .card img{height:auto;max-height:260px;aspect-ratio:16/9}
+  .cardbody p{min-height:0}
+  .feature{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;align-items:stretch}
+  .feature img{width:100%;height:auto;aspect-ratio:16/9}
+  .room{grid-template-columns:minmax(0,1fr);min-width:0}
+  .room img{height:auto;min-height:0;max-height:270px;aspect-ratio:16/9}
+  .room .body{min-width:0;padding:16px}
+  .bigimg{width:100%;height:auto;max-height:340px;aspect-ratio:4/3}
+  .panel{min-width:0;padding:17px;border-radius:16px}
+  .mapimg{width:100%;height:auto;max-height:none}
+  .step{grid-template-columns:40px minmax(0,1fr);gap:10px;padding:12px}
+  .step>div:nth-child(2){min-width:0;overflow-wrap:anywhere}
+  .num{width:38px;height:38px}
+  .site-photo-grid{gap:14px}
+  .site-photo-grid img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+  .gallery img{height:auto;aspect-ratio:4/3}
+  .video-card iframe{width:100%;height:auto;aspect-ratio:16/9}
+  .actions .btn{max-width:100%;justify-content:center;white-space:normal}
+  .table-wrap{overflow:visible!important}
+  .fees-table,.fees-table tbody,.fees-table tr,.fees-table td{display:block;width:100%;min-width:0}
+  .fees-table thead{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+  .fees-table tbody tr{margin:0 0 14px;border:1px solid var(--line);border-radius:13px;overflow:hidden;box-shadow:0 5px 16px #3a251310}
+  .fees-table tbody td{display:grid;grid-template-columns:minmax(105px,40%) minmax(0,1fr);gap:9px;align-items:start;text-align:start;padding:10px 11px;border-bottom:1px solid #e6d9c5;line-height:1.5}
+  .fees-table tbody td:before{content:attr(data-label);font-weight:800;color:var(--brown);font-size:.84rem}
+  .fees-table .fee-name,.fees-table .fee-hours{min-width:0}
+  .fees-table tbody td.fee-name{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .fees-table tbody td.fee-name:before{flex:0 0 38%}
+  .fees-table tbody td.fee-name .fee-audio{margin-inline-start:auto}
+  .fees-table td:last-child{border-bottom:0}
+  .fees-table .fee-audio{margin-inline-start:5px}
+  footer{padding:28px 16px}
+}
+@media(max-width:360px){.container{padding-left:10px;padding-right:10px}.brand{font-size:.85rem}.links{right:5px;left:5px}.fees-table tbody td{grid-template-columns:minmax(90px,38%) minmax(0,1fr);padding:9px}.btn{padding:10px 16px}}
 
-/* Mobile navigation fix: keep every site section and language visible */
-@media (max-width: 760px) {
-  .topbar {
-    height: auto !important;
-    min-height: 0 !important;
-    position: relative !important;
-  }
-  .nav {
-    height: auto !important;
-    min-height: 0 !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    align-items: stretch !important;
-    gap: 8px !important;
-    padding: 8px 10px !important;
-  }
-  .brand {
-    flex: 0 0 100% !important;
-    width: 100% !important;
-    white-space: normal !important;
-  }
+
+/* Mobile: keep every section link and all language choices visible without opening a hamburger menu. */
+@media(max-width:760px){
+  .topbar{position:relative!important;top:auto;height:auto;min-height:0}
+  .nav{position:relative;height:auto;min-height:0;flex-wrap:wrap;align-items:center;padding:10px;gap:8px}
+  .brand{flex:1 1 calc(100% - 8px);min-width:0;max-width:100%;font-size:1rem;overflow:visible}
+  .brand span:last-child{overflow:visible;text-overflow:clip;white-space:normal}
+  .hamb{display:none!important}
   .links,
-  .links.open {
-    display: grid !important;
-    position: static !important;
-    inset: auto !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    max-height: none !important;
-    overflow: visible !important;
-    flex: 0 0 100% !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    justify-content: stretch !important;
-    align-items: stretch !important;
-    gap: 6px !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    background: transparent !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-  }
-  .links button {
-    display: block !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    height: auto !important;
-    min-height: 42px !important;
-    white-space: normal !important;
-    text-align: center !important;
-    line-height: 1.35 !important;
-    padding: 8px 5px !important;
-    font-size: clamp(.72rem, 2.8vw, .88rem) !important;
-    border: 1px solid #ffffff35 !important;
-    border-radius: 9px !important;
-  }
-  .hamb {
-    display: none !important;
-  }
-  .langs {
-    display: flex !important;
-    order: 3 !important;
-    flex: 0 0 100% !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    flex-wrap: wrap !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 4px !important;
-    padding: 4px 0 8px !important;
-    direction: ltr !important;
-  }
-  .langs button {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    white-space: nowrap !important;
-    padding: 6px 8px !important;
-    font-size: .78rem !important;
-  }
+  .links.open{display:grid!important;position:static!important;inset:auto!important;width:100%;max-height:none!important;height:auto;overflow:visible!important;flex:1 0 100%;order:3;grid-template-columns:repeat(2,minmax(0,1fr));align-items:stretch;justify-content:stretch;flex-direction:initial;flex-wrap:initial;background:transparent;border-radius:0;padding:8px 0 0;margin:0;gap:7px;box-shadow:none}
+  .links>button{display:flex!important;align-items:center;justify-content:center;width:100%;min-width:0;min-height:46px;margin:0;padding:9px 7px;text-align:center;white-space:normal;overflow-wrap:anywhere;line-height:1.35;font-size:.88rem;background:#3b2819;border:1px solid #ffffff24;border-radius:10px;border-bottom:1px solid #ffffff24;color:#fff}
+  .links>button.active{background:var(--gold);border-color:var(--gold2);color:#fff}
+  .links .mobile-langs{display:grid!important;grid-column:1/-1;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;width:100%;padding:10px 0 0;margin:4px 0 0;border-top:1px solid #ffffff25;direction:ltr}
+  .links .mobile-langs button{display:flex!important;align-items:center;justify-content:center;min-width:0;min-height:40px;margin:0;padding:7px 3px;border:1px solid #e6d9c5;border-radius:10px;background:#fffdf8;color:#24180f;text-align:center;font-size:.82rem;white-space:normal;line-height:1.25}
+  .links .mobile-langs button.active{background:var(--gold);border-color:var(--gold);color:#fff}
+  .langs{display:none!important}
 }
 
 </style>
@@ -142,8 +136,9 @@ footer{background:#21160e;color:#eee;padding:38px 20px;margin-top:20px}.footer{m
 <button data-p="fees" onclick="go('fees')" data-i="fees_title">رسوم الدخول وأوقات العمل</button>
 <button data-p="mural" onclick="go('mural')" data-i="nav_mural">الجدارية</button>
 <button data-p="guide" onclick="go('guide')" data-i="nav_guide">دليل الاستخدام</button>
+<div class="mobile-langs" id="mobileLangs" aria-label="اختيار اللغة"></div>
 </div>
-<div class="langs" id="langs"></div><button class="hamb" onclick="links.classList.toggle('open')">☰</button>
+<div class="langs" id="langs"></div><button class="hamb" id="mobileMenuButton" aria-label="فتح قائمة الأقسام" aria-controls="links" aria-expanded="false" onclick="toggleMobileMenu()">☰</button>
 </nav></header>
 
 <main>
@@ -200,8 +195,8 @@ footer{background:#21160e;color:#eee;padding:38px 20px;margin-top:20px}.footer{m
 <footer><div class="footer"><h3 data-i="brand">مركز زوار مادبا</h3><p data-i="footer1">مادبا .. حيث يلتقي التاريخ بالفن</p><p style="color:#a99b8d" data-i="footer2">دليل رقمي متعدد اللغات لتجربة زائر أكثر وضوحاً واستقلالية.</p><p style="margin-top:22px;color:#e0bd7c">Project Development: Raghad Al-Qatami</p><p style="color:#a99b8d">Supervision: [Manager's Wael Janineh]</p><p style="color:#a99b8d">Madaba Visitor Center</p></div></footer><div class="toast" id="toast"></div>
 
 <script>
-const LANGS={ar:'العربية',en:'English',fr:'Français',de:'Deutsch',it:'Italiano',es:'Español',ru:'Русский',zh:'中文',bg:'Български'};
-const voice={ar:'ar-JO',en:'en-US',fr:'fr-FR',de:'de-DE',it:'it-IT',es:'es-ES',ru:'ru-RU',zh:'zh-CN',bg:'bg-BG'};
+const LANGS={ar:'العربية',en:'English',fr:'Français',de:'Deutsch',it:'Italiano',es:'Español',ru:'Русский',zh:'中文',bg:'Български',tr:'Türkçe 🇹🇷'};
+const voice={ar:'ar-JO',en:'en-US',fr:'fr-FR',de:'de-DE',it:'it-IT',es:'es-ES',ru:'ru-RU',zh:'zh-CN',bg:'bg-BG',tr:'tr-TR'};
 
 const baseRooms=[
  {key:'reception',img:'assets/reception.png'},
@@ -382,13 +377,34 @@ audio_missing:'Тук няма текст за прочитане.',audio_unsupp
 };
 
 
+// Turkish locale added without changing the existing languages or their translations.
+data.tr={
+brand:'Madaba Ziyaretçi Merkezi',nav_home:'Ana Sayfa',nav_madaba:'Madaba Hakkında',nav_center:'Ziyaretçi Merkezi',nav_rooms:'Odalar',nav_route:'Yürüyüş Rotası',nav_films:'Filmler',nav_mural:'Mozaik Duvar Resmi',nav_guide:'Kullanım Kılavuzu',nav_sites:'Turistik Yer Fotoğrafları',
+sites_title:'Madaba’daki Turistik Yerler',sites_desc:'Madaba’daki turistik yerlerin fotoğrafları.',site_center:'Madaba Ziyaretçi Merkezi',site_nebo:'Nebo Dağı',site_panorama:'Ölü Deniz Panoraması',site_machaerus:'Machaerus',site_church:'Harita Kilisesi',site_maein:'Ma’in Kaplıcaları',site_hidan:'Wadi Al-Hidan',site_mujib:'Wadi Mujib',site_dhiban:'Tell Dhiban Ziyaretçi Merkezi',site_wadi_wala:'Wadi Al-Wala',site_john_baptist:'Vaftizci Yahya’nın Başının Kesilmesi Kilisesi',site_dar_saraya:'Dar Al-Saraya',site_mosaic_institute:'Madaba Mozaik Sanatı ve Restorasyon Enstitüsü',site_apostles:'Havariler Kilisesi',site_burnt_martyrs:'Yanık Saray ve Şehitler Kilisesi',
+fees_title:'Giriş Ücretleri ve Resmî Çalışma Saatleri',fees_desc:'Giriş ücretleri ve çalışma saatleri tablosu.',listen_route:'▶ Rotayı dinle',listen_fees:'▶ Tabloyu dinle',
+eyebrow:'🎧 Çok Dilli Sesli Rehber',home_title:'Madaba Ziyaretçi Merkezi',home_desc:'Tarihte sesli rehber eşliğinde etkileşimli bir yolculuk. Madaba’yı, ziyaretçi merkezini ve içeriklerini telefonunuzdan keşfedin.',start:'Yolculuğa Başla › 🎧',how:'Rehberi nasıl kullanırım?',explore:'Merkezi Keşfedin',explore_desc:'Bir bölüm seçin ve açıklamayı telefonunuzdan veya kulaklığınızdan dinleyin.',
+feature_route:'Turistik Yürüyüş Haritası',feature_route_desc:'Madaba Ziyaretçi Merkezi’nden şehirdeki önemli yerlere uzanan rotayı takip edin.',feature_center:'Madaba Ziyaretçi Merkezi',feature_center_desc:'Merkez, odalar, panolar ve olanaklar hakkında bilgi edinin.',feature_mural:'Kral Yolu Mozaik Duvar Resmi',feature_mural_desc:'Mozaik duvar resmi ve Madaba ilinin önemli yerleri hakkında bilgi edinin.',more:'Daha Fazla ›',
+tag_madaba:'01 · Madaba Hakkında',madaba_title:'Madaba Hakkında',madaba_p1:'Madaba, Ürdün’ün başkenti Amman’ın 33 kilometre güneyinde yer alır. Şehir, deniz seviyesinden yaklaşık 774 metre yüksektedir ve verimli toprağıyla bilinir. Madaba (Mideba) adı Aramice kökenlidir; “sakin sular”, “su ve meyve diyarı” veya “iyi yer” anlamlarına gelir. Adı, MÖ yaklaşık 850 yılına tarihlenen Moab Kralı Meşa yazıtında ilk kez anılmasından bu yana korunmuştur. Eski Ahit’te de Moab şehirlerinden biri olarak geçer.',madaba_p2:'',madaba_note:'',listen:'▶ Dinle',
+tag_center:'02 · Merkez',center_title:'Madaba Ziyaretçi Merkezi Hakkında',center_p1:'Madaba Ziyaretçi Merkezi Ekim 2001’de dört dönümlük bir alanda açılmıştır. Bina başlangıçta Al-Bajali ailesine ait bir evdi. Turizm ve Eski Eserler Bakanlığı, binayı restore edip ziyaretçilere gerekli hizmetleri sunmak ve şehirdeki turistik ve arkeolojik alanlara giden ziyaretçiler için bir başlangıç noktası oluşturmak amacıyla devralmıştır. Merkez ayrıca yerel topluluk için turistik ve sanatsal etkinliklere de ev sahipliği yapar. 2026 yılında otobüs park alanı genişletilip iyileştirilmiştir.',center_p2:'',panels_title:'Tanıtım Panoları ve İçerikler',panels_desc:'Sitenin mevcut içeriğine göre Tarih ve Miras Odası, Madaba’nın çağlar boyunca tarihini ve turizm, miras, tarım ve el sanatları açısından önemini anlatan panolar içerir. Turistik Rotalar Odası ise miras, dinî, kültürel, sağlık ve macera rotaları ile Dhiban rotasını tanıtır.',
+tag_rooms:'03 · Odalar',rooms_title:'Madaba Ziyaretçi Merkezi Odaları',rooms_desc:'Merkez, ziyaretçilerin Madaba’nın tarihini, mirasını ve turistik rotalarını anlamasına yardımcı olan bilgiler ve görseller sunar.',gallery_title:'Merkezin İçinden',gallery_desc:'Binanın, salonların ve koridorların fotoğrafları.',
+tag_route:'04 · Yürüyüş Rotası',route_title:'Madaba Ziyaret Rotası',route_intro:'Madaba Ziyaretçi Merkezi’ndeyiz. Haritada gösterilen başlıca yerlere ulaşmak için aşağıdaki adımları izleyin.',
+tag_films:'05 · Filmler',films_title:'Madaba ve Ziyaretçi Merkezi Hakkında Filmler',films_desc:'Bir filmi burada izlemek veya doğrudan YouTube’da açmak için seçin.',
+tag_mural:'06 · Mozaik Duvar Resmi',mural_title:'Kral Yolu Mozaik Duvar Resmi',mural_p:'Madaba Ziyaretçi Merkezi’ndeki Kral Yolu mozaik duvar resminin önündesiniz. Bu eser, Madaba ilindeki turistik yerleri gösterir. Yaklaşık 30 metre uzunluğunda ve 6 metre yüksekliğindedir.',listen_mural:'▶ Mozaik açıklamasını dinle',mural_about_title:'Mozaik Hakkında',mural_about:'Mozaik, Madaba ilindeki turistik yerleri görsel olarak sunar ve ziyaretçi merkezi deneyiminin önemli bir parçasıdır.',
+tag_guide:'07 · Sesli Rehber',guide_title:'Kullanım Kılavuzu',guide_desc:'Sistem, ziyaretçinin kendi telefonundan bağımsız olarak kullanabilmesi için tasarlanmıştır.',guide_q:'🎧 Kulaklıkla çalışır mı?',guide_p:'Evet. Telefona kulaklık veya Bluetooth kulaklık bağlandığında sesli rehber, cihaz ayarlarına göre bağlı kulaklıktan duyulur.',guide_note:'Özel bir vericiye veya rehberin taşıdığı bir cihaza gerek yoktur.',play:'▶',audio_title:'Sesli Rehber Denemesi',footer1:'Madaba .. tarihin sanatla buluştuğu yer',footer2:'Daha anlaşılır ve bağımsız bir ziyaret deneyimi için çok dilli dijital rehber.',
+rooms:{reception:['Birinci: Karşılama ve Bilgilendirme Odası','Bu oda ziyaretçilere Madaba’daki turistik yerler hakkında bilgi verir ve şehir ile önemli noktalarını tanıtan turizm broşürleri sunar.'],reading:['İkinci: Okuma Odası','Okuma odası ziyaretçilere dinlenebilecekleri, turizm broşürlerini okuyabilecekleri veya odadaki kitaplara göz atabilecekleri bir alan sağlar.'],films:['Üçüncü: Film Odası','Bu odada Madaba’yı tanıtan turistik filmler izlenebilir. Filmlerden biri yedi dakika sürer ve Arapça ile İngilizce olarak sunulur. Üç dakikadan kısa olan diğer film ise sekiz veya dokuz dilde mevcuttur.'],history:['Dördüncü: Tarih ve Miras Odası','Madaba Ziyaretçi Merkezi’nin en büyük odasıdır. Şehrin tarihini ve binalarını, ayrıca son yıllarda aldığı uluslararası unvanları tanıtır.'],trails:['Beşinci: Turistik Rotalar Odası','Bu odada Madaba ilindeki altı rota tanıtılır: miras, sağlık, kültür, din, Hristiyan hac ve macera rotaları.']},
+route:['Merkezin odalarını ve olanaklarını gezdikten sonra ana kapıdan çıkıp sola dönerek Madaba Mozaik Sanatı ve Restorasyon Enstitüsü’ne gidin. Öğrencilerin mozaik yapım ve restorasyon çalışmalarını izleyebilir, enstitünün yerel topluluğa katkısını öğrenebilirsiniz.','Ardından Arkeoloji Parkı’na giderek Meryem Ana Kilisesi, Aziz Hippolytus Salonu, Peygamber İlyas Kilisesi, Roma caddesi ve Aziz Elianus’un mezarı gibi tarihî yerleri görün. Parkta Madaba ilinin farklı bölgelerinden toplanmış mozaik panolar da bulunur.','Arkeoloji Parkı’ndan çıktıktan sonra sola dönerek çoğunlukla yaya kullanımına açık turistik caddeye ulaşın. Cadde üzerinde Doğu tarzı hediyelik eşya dükkânları, atölyeler, turistik deneyimler ve restoranlar bulunur.','Caddenin ortalarında Yanık Saray ve Şehitler Kilisesi’ne girerek mozaik zeminleri görün.','Yanık Saray ve Şehitler Kilisesi ziyaretinden sonra sola dönüp caddenin sonuna kadar ilerleyin.','Ardından sağa dönerek, MS 6. yüzyıla tarihlenen ve Ürdün, Filistin ile Mısır’ın bir bölümündeki önemli dinî yerleri gösteren dünyanın en eski mozaik haritasını barındıran Aziz George Kilisesi’ne ulaşın.','Daha sonra Madaba’nın yüksek ve panoramik bir noktasında bulunan eski Osmanlı yapısı Dar Al-Saraya’ya gidin. Şehir manzarasının keyfini çıkarın, kahve için ve yerel topluluğun el işi ürünlerinin sergilendiği odaları gezin.','Dar Al-Saraya’dan sonra sola dönerek Vaftizci Yahya’nın Başının Kesilmesi Kilisesi’ne gidin. Kilisenin önemli bölümlerini ve çan kulesini gördükten sonra sola doğru düz ilerleyin; kavşakta sağa, ardından sola dönerek folklor ve arkeoloji müzelerini içeren Madaba Müzesi’ne ulaşın.','Müzeden sonra sağa dönerek katedrale, ardından rotanın son noktası olan Havariler Kilisesi’ne gidin.'],
+audio_missing:'Bu bölüm için okunacak metin yok.',audio_unsupported:'Bu cihaz konuşma sentezini desteklemiyor.',audio_complete:'Okuma tamamlandı',welcome:'Madaba Ziyaretçi Merkezi sesli rehberine hoş geldiniz. Bir dil seçin ve oynat düğmesine basarak telefonunuzdan veya kulaklığınızdan dinleyin.'
+};
+
+
 const gallery=[
  ['assets/center-exterior.png','center_photo'],['assets/reception.png','reception_photo'],['assets/room-1.png','room1_photo'],['assets/room-2.png','room2_photo'],['assets/gallery-1.png','gallery1_photo'],['assets/gallery-2.png','gallery2_photo']
 ];
 const videos=[
  ['zUc9_6ncPmI','https://www.youtube.com/watch?v=zUc9_6ncPmI'],
  ['4Kkh7K1ejks','https://www.youtube.com/watch?v=4Kkh7K1ejks'],
- ['6JbKNXkn5wk','https://www.youtube.com/watch?v=6JbKNXkn5wk']
+ ['6JbKNXkn5wk','https://www.youtube.com/watch?v=6JbKNXkn5wk'],
+ ['U2Q36HTDyY8','https://youtu.be/U2Q36HTDyY8?si=c1btxsIZhu3kPTUJ']
 ];
 
 let lang=localStorage.getItem('mv_lang')||'ar';
@@ -415,7 +431,8 @@ it:{headers:['Sito','Orari di apertura','Visitatore straniero','Visitatore arabo
 es:{headers:['Sitio','Horario de apertura','Visitante extranjero','Visitante árabe','Visitante jordano'],free:'Gratis',names:['Centro de visitantes de Madaba','Instituto del mosaico','Parque arqueológico, Palacio Quemado, Museo de Madaba, Iglesia de los Apóstoles','Iglesia de San Jorge [Iglesia del Mapa]','Museo Dar Al-Saraya','Iglesia de la Decapitación de San Juan Bautista','Monte Nebo','Aguas termales de Ma’in','Maqueronte','Panorama del Mar Muerto','Lugar del bautismo'],hours:['8:00–18:00','8:00–15:00 (cerrado los días festivos)','8:00–18:30','8:00–18:00; domingo: 10:00; viernes: 9:30','8:00–12:00','8:00–18:00','8:00–17:30','8:00–20:00','8:00–17:00','Verano: 8:00–11:00; invierno: 8:00–10:00','8:00–17:00']},
 ru:{headers:['Объект','Часы работы','Иностранный посетитель','Арабский посетитель','Иорданский посетитель'],free:'Бесплатно',names:['Центр посетителей Мадабы','Институт мозаики','Археологический парк, Сгоревший дворец, музей Мадабы, церковь Апостолов','Церковь Святого Георгия [Церковь карты]','Музей Дар-ас-Сарая','Церковь Усекновения главы Иоанна Крестителя','Гора Нево','Горячие источники Маин','Махерон','Панорама Мёртвого моря','Место крещения'],hours:['8:00–18:00','8:00–15:00 (закрыто в праздничные дни)','8:00–18:30','8:00–18:00; воскресенье: 10:00; пятница: 9:30','8:00–12:00','8:00–18:00','8:00–17:30','8:00–20:00','8:00–17:00','Летом: 8:00–11:00; зимой: 8:00–10:00','8:00–17:00']},
 zh:{headers:['景点','开放时间','外国游客','阿拉伯游客','约旦游客'],free:'免费',names:['马达巴游客中心','马赛克艺术学院','考古公园、焚毁宫殿、马达巴博物馆、使徒教堂','圣乔治教堂［地图教堂］','达尔萨拉亚博物馆','施洗者圣约翰斩首教堂','尼波山','迈因温泉','马凯鲁斯','死海全景','受洗地'],hours:['上午8:00–下午6:00','上午8:00–下午3:00（公共假日关闭）','上午8:00–下午6:30','上午8:00–下午6:00；周日：上午10:00；周五：上午9:30','上午8:00–12:00','上午8:00–下午6:00','上午8:00–下午5:30','上午8:00–下午8:00','上午8:00–下午5:00','夏季：上午8:00–11:00；冬季：上午8:00–10:00','上午8:00–下午5:00']},
-bg:{headers:['Обект','Работно време','Чуждестранен посетител','Арабски посетител','Йордански посетител'],free:'Безплатно',names:['Туристически център Мадаба','Институт по мозайка','Археологически парк, Изгорелият дворец, музей Мадаба, църквата на апостолите','Църква „Свети Георги“ [Църквата на картата]','Музей Дар ал-Сарая','Църква „Отсичане главата на Йоан Кръстител“','Планината Нево','Горещи извори Маин','Махерон','Панорама към Мъртво море','Място на кръщението'],hours:['8:00–18:00 ч.','8:00–15:00 ч. (затворено през официалните празници)','8:00–18:30 ч.','8:00–18:00 ч.; неделя: 10:00 ч.; петък: 9:30 ч.','8:00–12:00 ч.','8:00–18:00 ч.','8:00–17:30 ч.','8:00–20:00 ч.','8:00–17:00 ч.','Лято: 8:00–11:00 ч.; зима: 8:00–10:00 ч.','8:00–17:00 ч.']}
+bg:{headers:['Обект','Работно време','Чуждестранен посетител','Арабски посетител','Йордански посетител'],free:'Безплатно',names:['Туристически център Мадаба','Институт по мозайка','Археологически парк, Изгорелият дворец, музей Мадаба, църквата на апостолите','Църква „Свети Георги“ [Църквата на картата]','Музей Дар ал-Сарая','Църква „Отсичане главата на Йоан Кръстител“','Планината Нево','Горещи извори Маин','Махерон','Панорама към Мъртво море','Място на кръщението'],hours:['8:00–18:00 ч.','8:00–15:00 ч. (затворено през официалните празници)','8:00–18:30 ч.','8:00–18:00 ч.; неделя: 10:00 ч.; петък: 9:30 ч.','8:00–12:00 ч.','8:00–18:00 ч.','8:00–17:30 ч.','8:00–20:00 ч.','8:00–17:00 ч.','Лято: 8:00–11:00 ч.; зима: 8:00–10:00 ч.','8:00–17:00 ч.']},
+tr:{headers:['Yer','Çalışma Saatleri','Yabancı Ziyaretçi','Arap Ziyaretçi','Ürdünlü Ziyaretçi'],free:'Ücretsiz',names:['Madaba Ziyaretçi Merkezi','Mozaik Enstitüsü','Arkeoloji Parkı, Yanık Saray, Madaba Müzesi, Havariler Kilisesi','Aziz George Kilisesi [Harita Kilisesi]','Dar Al-Saraya Müzesi','Vaftizci Yahya’nın Başının Kesilmesi Kilisesi','Nebo Dağı','Ma’in Kaplıcaları','Machaerus','Ölü Deniz Panoraması','Vaftiz Alanı'],hours:['08.00–18.00','08.00–15.00 (resmî tatillerde kapalı)','08.00–18.30','08.00–18.00; Pazar: 10.00; Cuma: 09.30','08.00–12.00','08.00–18.00','08.00–17.30','08.00–20.00','08.00–17.00','Yaz: 08.00–11.00; kış: 08.00–10.00','08.00–17.00']}
 };
 function renderFees(){
  const locale=feeI18n[lang]||feeI18n.ar, head=document.getElementById('feesHead'),body=document.getElementById('feesBody');
@@ -424,17 +441,18 @@ function renderFees(){
  body.innerHTML=feeRows.map((row,i)=>{
    const name=locale.names[i], hours=locale.hours[i];
    const priceText=row.prices.map(p=>p==='مجانية'?locale.free:p);
-   const audioLabel=lang==='ar'?'استمع إلى تفاصيل الموقع':lang==='en'?'Listen to site details':lang==='fr'?'Écouter les détails du site':lang==='de'?'Standortdetails anhören':lang==='it'?'Ascolta i dettagli del sito':lang==='es'?'Escuchar los detalles del sitio':lang==='ru'?'Прослушать сведения об объекте':lang==='zh'?'收听景点信息':'Слушай данните за обекта';
-   return '<tr><td class="fee-name">'+esc(name)+' <button class="sound fee-audio" type="button" data-fee-audio="'+i+'" aria-label="'+esc(audioLabel)+'" title="'+esc(audioLabel)+'">🔊</button></td><td class="fee-hours">'+esc(hours)+'</td>'+priceText.map(p=>'<td>'+esc(p)+'</td>').join('')+'</tr>';
+   const audioLabel=lang==='ar'?'استمع إلى تفاصيل الموقع':lang==='en'?'Listen to site details':lang==='fr'?'Écouter les détails du site':lang==='de'?'Standortdetails anhören':lang==='it'?'Ascolta i dettagli del sito':lang==='es'?'Escuchar los detalles del sitio':lang==='ru'?'Прослушать сведения об объекте':lang==='zh'?'收听景点信息':lang==='tr'?'Yer bilgilerini dinle':'Слушай данните за обекта';
+   return '<tr><td class="fee-name" data-label="'+esc(locale.headers[0])+'">'+esc(name)+' <button class="sound fee-audio" type="button" data-fee-audio="'+i+'" aria-label="'+esc(audioLabel)+'" title="'+esc(audioLabel)+'">🔊</button></td><td class="fee-hours" data-label="'+esc(locale.headers[1])+'">'+esc(hours)+'</td>'+priceText.map((p,j)=>'<td data-label="'+esc(locale.headers[j+2])+'">'+esc(p)+'</td>').join('')+'</tr>';
  }).join('');
  body.querySelectorAll('[data-fee-audio]').forEach(button=>button.addEventListener('click',()=>{const i=Number(button.dataset.feeAudio),row=feeRows[i];if(!row)return;const priceText=row.prices.map(p=>p==='مجانية'?locale.free:p);speak([locale.names[i],locale.hours[i],locale.headers[2]+': '+priceText[0],locale.headers[3]+': '+priceText[1],locale.headers[4]+': '+priceText[2]].join('. '))}));
 }
 
-function addSiteAudio(){const grid=document.getElementById('sitePhotoGrid');if(!grid)return;grid.querySelectorAll('figure').forEach(fig=>{const cap=fig.querySelector('figcaption');if(!cap)return;let b=fig.querySelector('.site-audio');if(!b){b=document.createElement('button');b.className='sound site-audio';b.type='button';b.textContent='🔊';fig.appendChild(b)}const labels={ar:'استمع إلى اسم الموقع',en:'Listen to site name',fr:'Écouter le nom du site',de:'Standortnamen anhören',it:'Ascolta il nome del sito',es:'Escuchar el nombre del sitio',ru:'Прослушать название объекта',zh:'收听景点名称',bg:'Чуй името на обекта'};b.setAttribute('aria-label',labels[lang]||labels.ar);b.title=labels[lang]||labels.ar;b.onclick=()=>speak(cap.textContent);});}
+function addSiteAudio(){const grid=document.getElementById('sitePhotoGrid');if(!grid)return;grid.querySelectorAll('figure').forEach(fig=>{const cap=fig.querySelector('figcaption');if(!cap)return;let b=fig.querySelector('.site-audio');if(!b){b=document.createElement('button');b.className='sound site-audio';b.type='button';b.textContent='🔊';fig.appendChild(b)}const labels={ar:'استمع إلى اسم الموقع',en:'Listen to site name',fr:'Écouter le nom du site',de:'Standortnamen anhören',it:'Ascolta il nome del sito',es:'Escuchar el nombre del sitio',ru:'Прослушать название объекта',zh:'收听景点名称',bg:'Чуй името на обекта',tr:'Yer adını dinle'};b.setAttribute('aria-label',labels[lang]||labels.ar);b.title=labels[lang]||labels.ar;b.onclick=()=>speak(cap.textContent);});}
 
-function go(id){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('[data-p]').forEach(x=>x.classList.toggle('active',x.dataset.p===id));document.getElementById('links').classList.remove('open');scrollTo({top:0,behavior:'smooth'})}
+function toggleMobileMenu(){const menu=document.getElementById('links'),button=document.getElementById('mobileMenuButton');const open=!menu.classList.contains('open');menu.classList.toggle('open',open);if(button)button.setAttribute('aria-expanded',String(open))}
+function go(id){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));const page=document.getElementById(id);if(!page)return;page.classList.add('active');document.querySelectorAll('[data-p]').forEach(x=>x.classList.toggle('active',x.dataset.p===id));document.getElementById('links').classList.remove('open');const menuButton=document.getElementById('mobileMenuButton');if(menuButton)menuButton.setAttribute('aria-expanded','false');scrollTo({top:0,behavior:'smooth'})}
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
-function setLang(l){if(typeof stopAudio==='function')stopAudio();lang=l;localStorage.setItem('mv_lang',l);document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';renderAll();showToast(LANGS[l]+' ✓')}
+function setLang(l){if(!LANGS[l])return;if(typeof stopAudio==='function')stopAudio();lang=l;localStorage.setItem('mv_lang',l);document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';renderAll();document.getElementById('links').classList.remove('open');const menuButton=document.getElementById('mobileMenuButton');if(menuButton)menuButton.setAttribute('aria-expanded','false');showToast(LANGS[l]+' ✓')}
 let speechRunId=0;
 let speechWatchdog=null;
 let speechLastStart=0;
@@ -533,7 +551,7 @@ function speakKey(k){
 }
 function speakRoom(i){const d=data&&data[lang];const key=baseRooms&&baseRooms[i]&&baseRooms[i].key;const room=d&&d.rooms&&key?d.rooms[key]:null;if(Array.isArray(room)&&typeof room[0]==='string'&&room[0].trim()&&typeof room[1]==='string'&&room[1].trim()){speak(room[0]+'. '+room[1]);return}showToast('تعذّر العثور على نص شرح هذه الغرفة باللغة المحددة')}
 
-function renderLangs(){document.getElementById('langs').innerHTML=Object.entries(LANGS).map(([k,v])=>`<button class="${k===lang?'active':''}" onclick="setLang('${k}')">${v}</button>`).join('');document.getElementById('langbox').innerHTML=document.getElementById('langs').innerHTML}
+function renderLangs(){const html=Object.entries(LANGS).map(([k,v])=>`<button type="button" class="${k===lang?'active':''}" onclick="setLang('${k}')">${v}</button>`).join('');document.getElementById('langs').innerHTML=html;const mobile=document.getElementById('mobileLangs');if(mobile)mobile.innerHTML=html;document.getElementById('langbox').innerHTML=html}
 function renderText(){const d=data[lang];document.querySelectorAll('[data-i]').forEach(el=>{const k=el.dataset.i;if(d[k]!==undefined)el.textContent=d[k]});}
 function renderRooms(){const d=data[lang];document.getElementById('roomList').innerHTML=baseRooms.map((r,i)=>{const x=d.rooms[r.key];return `<article class="room"><img src="${r.img}" loading="lazy"><div class="body"><h3><span style="color:var(--gold)">${i+1}.</span> ${esc(x[0])}</h3><p>${esc(x[1])}</p><div class="card-actions"><button class="smallbtn" onclick="speakRoom(${i})">${esc(d.listen)}</button><button class="sound" onclick="speakRoom(${i})">🔊</button></div></div></article>`}).join('')}
 function renderHome(){const d=data[lang];const cards=[
