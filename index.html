@@ -171,7 +171,7 @@ footer{background:#21160e;color:#eee;padding:38px 20px;margin-top:20px}.footer{m
 
 
 
-<section id="fees" class="page"><div class="container"><div class="section-head"><span class="eyebrow" style="color:var(--brown);background:#eadcc6">09 · رسوم وأوقات</span><h2 data-i="fees_title">رسوم الدخول وأوقات العمل الرسمي</h2><p data-i="fees_desc">الجدول المرفق لرسوم الدخول وأوقات العمل.</p><button class="btn dark" type="button" onclick="speakKey('fees')" data-i="listen_fees">▶ استمع إلى الجدول</button></div><div class="fees-image-wrap" style="margin-top:22px;width:100%;overflow:hidden"><img id="feesTableImage" src="assets/fees-ar.png" alt="رسوم الدخول وأوقات العمل الرسمي" style="display:block;width:100%;height:auto;object-fit:contain;border-radius:4px"></div><div class="table-wrap" style="display:none"><table id="feesTable" class="fees-table"><thead id="feesHead"></thead><tbody id="feesBody"></tbody></table></div></div></section>
+<section id="fees" class="page"><div class="container"><div class="section-head"><span class="eyebrow" style="color:var(--brown);background:#eadcc6">09 · رسوم وأوقات</span><h2 data-i="fees_title">رسوم الدخول وأوقات العمل الرسمي</h2><p data-i="fees_desc">الجدول المرفق لرسوم الدخول وأوقات العمل.</p><button class="btn dark" type="button" onclick="speakKey('fees')" data-i="listen_fees">▶ استمع إلى الجدول</button></div><div class="fees-image-wrap" style="margin-top:22px;width:100%;overflow:hidden"><img id="feesTableImage" src="assets/fees-updated.jpg" alt="رسوم الدخول وأوقات العمل الرسمي" style="display:block;width:100%;height:auto;object-fit:contain;border-radius:4px"></div><div class="table-wrap" style="display:none"><table id="feesTable" class="fees-table"><thead id="feesHead"></thead><tbody id="feesBody"></tbody></table></div></div></section>
 
 <section id="activities" class="page"><div class="container"><div class="section-head"><span class="eyebrow" style="color:var(--brown);background:#eadcc6" data-i="tag_activities">أنشطة المركز</span><h2 data-i="activities_title">الأنشطة</h2><p data-i="activities_desc">صور من أنشطة وفعاليات مركز زوار مادبا.</p></div><div class="activities-grid">
 <figure><img src="assets/activity-01.png" loading="lazy" alt="نشاط من أنشطة مركز زوار مادبا"></figure>
@@ -182,8 +182,8 @@ footer{background:#21160e;color:#eee;padding:38px 20px;margin-top:20px}.footer{m
 <figure><img src="assets/activity-06.png" loading="lazy" alt="نشاط من أنشطة مركز زوار مادبا"></figure>
 <figure><img src="assets/activity-07.png" loading="lazy" alt="نشاط من أنشطة مركز زوار مادبا"></figure>
 <figure><img src="assets/activity-08.png" loading="lazy" alt="نشاط من أنشطة مركز زوار مادبا"></figure>
-<figure><img src="assets/activity-09.png" loading="lazy" alt="نشاط من أنشطة مركز زوار مادبا"></figure>
-<figure><img src="assets/activity-10.png" loading="lazy" alt="نشاط من أنشطة مركز زوار مادبا"></figure>
+
+
 </div></div></section>
 
 <section id="sites" class="page"><div class="container"><div class="section-head"><span class="eyebrow" style="color:var(--brown);background:#eadcc6">08 · مواقع سياحية</span><h2 data-i="sites_title">صور المواقع السياحية في مادبا</h2><p data-i="sites_desc">صور المواقع السياحية التي تشملها مادبا.</p></div><div class="site-photo-grid" id="sitePhotoGrid">
@@ -452,7 +452,7 @@ tr:{headers:['Yer','Çalışma Saatleri','Yabancı Ziyaretçi','Arap Ziyaretçi'
 };
 function renderFees(){
  const locale=feeI18n[lang]||feeI18n.ar, head=document.getElementById('feesHead'),body=document.getElementById('feesBody');
- const feesImage=document.getElementById('feesTableImage'); if(feesImage){const imageLang=feeI18n[lang]?lang:'ar';feesImage.src='assets/fees-'+imageLang+'.png';feesImage.alt=locale.headers[0]+' · '+locale.headers[1]+' · '+locale.headers.slice(2).join(' · ');}
+ const feesImage=document.getElementById('feesTableImage'); if(feesImage){feesImage.src='assets/fees-updated.jpg';feesImage.alt=locale.headers[0]+' · '+locale.headers[1]+' · '+locale.headers.slice(2).join(' · ');}
  if(!head||!body)return;
  head.innerHTML='<tr style="background:#416fbd;color:#fff">'+locale.headers.map(h=>'<th scope="col">'+esc(h)+'</th>').join('')+'</tr>';
  body.innerHTML=feeRows.map((row,i)=>{
